@@ -1,4 +1,6 @@
-/* Write a program for these services:
+/*
+    Write a program for these services:
+    
 	* Calculation service:
 	1. Add two numbers
 	2. Check even or odd
