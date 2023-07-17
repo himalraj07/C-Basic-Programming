@@ -1,6 +1,7 @@
-// Write a program to display following series
+/*
+    Write a program to display following series
 	1,4,9,16,..........,100.
-//
+*/
 
 #include <stdio.h>
 int main()

@@ -1,10 +1,11 @@
-// Write a program to display following pattern.
+/*
+    Write a program to display following pattern.
 	1
-	1 2
-	1 2 3
-	1 2 3 4
-	1 2 3 4 5
-//
+	2 2
+	3 3 3
+	4 4 4 4
+	5 5 5 5 5
+*/
 
 #include<stdio.h>
 void main()
@@ -14,7 +15,7 @@ void main()
     {
         for(j=1;j<=i;j++)
         {
-            printf("%d ",j);
+            printf("%d ",i);
         }
         printf("\n");
     }

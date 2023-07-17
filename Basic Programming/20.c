@@ -1,4 +1,4 @@
-// Write a program to input a number and display its factorial. //
+// Write a program to input a number and display its factorial.
 
 #include<stdio.h>
 int main()

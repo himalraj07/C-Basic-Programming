@@ -1,16 +1,17 @@
-// Write a program to display following pattern.
-	*
-	* *
-	* * *
-	* * * *
+/*
+    Write a program to display following pattern.
 	* * * * *
-//
+	* * * *
+	* * *
+	* *
+	*
+*/
 
 #include<stdio.h>
-void main()
+int main()
 {
     int i,j;
-    for(i=0;i<5;i++)
+    for(i=5;i>=0;i--)
     {
         for(j=0;j<=i;j++)
         {
@@ -18,4 +19,5 @@ void main()
         }
         printf("\n");
     }
+    return 0;
 }

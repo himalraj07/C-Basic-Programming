@@ -1,4 +1,4 @@
-// Write a program to display sum of numbers from 1 to 100. //
+// Write a program to display sum of numbers from 1 to 100.
 
 #include<stdio.h>
 int main()

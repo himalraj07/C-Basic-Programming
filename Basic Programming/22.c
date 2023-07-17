@@ -1,4 +1,4 @@
-// Write a program to display number from 1 to 100 using while loop. //
+// Write a program to display number from 1 to 100 using while loop.
 
 #include<stdio.h>
 int main()

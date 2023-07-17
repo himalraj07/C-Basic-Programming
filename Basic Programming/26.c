@@ -1,5 +1,5 @@
 // Write a program to display following series using while loop
-	2,5,10,17,......,100.
+	// 2,5,10,17,......,100.
 //
 
 #include<stdio.h>

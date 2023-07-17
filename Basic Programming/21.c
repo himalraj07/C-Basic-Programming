@@ -1,4 +1,4 @@
-// Write a program to input a number and display it is prime or composite. //
+// Write a program to input a number and display it is prime or composite.
 
 #include<stdio.h>
 int main()
