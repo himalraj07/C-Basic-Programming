@@ -1,19 +1,21 @@
 /*
     Write a program to display following pattern.
-	*
-	* *
-	* * *
-	* * * *
-	* * * * *
+    *
+    * *
+    * * *
+    * * * *
+    * * * * *
 */
 
-#include<stdio.h>
+#include <stdio.h>
+
 void main()
 {
-    int i,j;
-    for(i=0;i<5;i++)
+    int i, j;
+
+    for (i = 0; i < 5; i++)
     {
-        for(j=0;j<=i;j++)
+        for (j = 0; j <= i; j++)
         {
             printf("* ");
         }

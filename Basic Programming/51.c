@@ -1,25 +1,33 @@
-// Write a program to input 3*3 matrix and display sum of diagonal numbers. //
+/*
+    Write a program to input 3*3 matrix and display sum of diagonal numbers.
+*/
 
-#include<stdio.h>
+#include <stdio.h>
+
 int main()
 {
-    int i,j,a[3][3],sum=0;
+    int i, j, a[3][3], sum = 0;
+
     printf("Enter the matrix:\n");
-    for(i=0;i<3;i++)
+
+    for (i = 0; i < 3; i++)
     {
-        for(j=0;j<3;j++)    
+        for (j = 0; j < 3; j++)
         {
-            scanf("%d",&a[i][j]);
+            scanf("%d", &a[i][j]);
         }
     }
-    for (i=0;i<3;i++)
+
+    for (i = 0; i < 3; i++)
     {
-        for (j=0;j<3;j++)
+        for (j = 0; j < 3; j++)
         {
-            if (a[i]==a[j])
-            sum = sum+a[i][j];
+            if (a[i] == a[j])
+                sum = sum + a[i][j];
         }
     }
-    printf ("Sum of diagonal numbers of matrix is is %d.",sum);
+
+    printf("Sum of diagonal numbers of matrix is is %d.", sum);
+
     return 0;
 }

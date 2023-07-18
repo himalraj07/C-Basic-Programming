@@ -1,23 +1,29 @@
-// Write a program to display first n prime numbers. //
+/*
+    Write a program to display first n prime numbers.
+*/
 
-#include<stdio.h>
+#include <stdio.h>
+
 void main()
 {
-    int i,n,j;
+    int i, n, j;
+
     printf("Please enter number limit:");
-    scanf("%d",&n);
-    for(i=2;i<=n;i++)
+    scanf("%d", &n);
+
+    for (i = 2; i <= n; i++)
     {
-        for(j=2;j<=i;j++)
+        for (j = 2; j <= i; j++)
         {
-            if(i%j==0)
-        {
-            break;
+            if (i % j == 0)
+            {
+                break;
+            }
         }
-        }
-        if(i==j)
+
+        if (i == j)
         {
-            printf("%d,",i);
+            printf("%d,", i);
         }
     }
 }
