@@ -1,8 +1,9 @@
 /*
-    C program to design CPU implementation
+    C program to design CPU implementation.
 */
 
 #include <stdio.h>
+
 #define FETCH 1
 #define DECODE 2
 #define ADDITION 3
@@ -13,6 +14,7 @@ int main()
     int program[] = {FETCH, DECODE, ADDITION, HALT};
     int PC = 0, ir = 0, mar = 0, mdr = 0, accumulator = 0, operand = 5;
     int running = 1;
+    
     while (running)
     {
         mar = PC;
@@ -33,6 +35,8 @@ int main()
             break;
         }
     }
+
     printf("Result: %d\n", accumulator);
+    
     return 0;
 }

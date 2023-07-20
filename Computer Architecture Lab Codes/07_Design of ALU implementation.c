@@ -1,5 +1,5 @@
 /*
-    c program to Design of ALU implementation
+    C program to Design of ALU implementation.
 */
 
 #include <stdio.h>
@@ -16,6 +16,7 @@ int main()
     int operand1 = 10;   // First operand
     int operand2 = 5;    // Second operand
     int result;          // ALU result
+
     // ALU operation
     switch (operation)
     {
@@ -43,7 +44,9 @@ int main()
         printf("Invalid operation\n");
         return 1;
     }
+
     // Print the ALU result
     printf("Result: %d\n", result);
+
     return 0;
 }

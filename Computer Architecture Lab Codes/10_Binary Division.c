@@ -1,5 +1,5 @@
 /*
-    C program for binary division
+    C program for binary division.
 */
 
 #include <stdio.h>
@@ -56,6 +56,7 @@ char *binaryDivision(const char *binary1, const char *binary2)
     // Remove leading zeros from the remainder
     int remainderLength = strlen(remainder);
     int leadingZeros = 0;
+    
     for (i = 0; i < remainderLength - 1; i++)
     {
         if (remainder[i] == '0')

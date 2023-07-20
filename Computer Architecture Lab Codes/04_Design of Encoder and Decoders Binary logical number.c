@@ -1,5 +1,5 @@
 /*
-    c program to design of encoder and decoders binary logical number
+    C program to design of encoder and decoders binary logical number.
 */
 
 #include <stdio.h>
@@ -30,16 +30,18 @@ int main()
 {
     char message[100];
     int length;
+
     printf("Enter a binary number: ");
     scanf("%s", message);
     length = strlen(message);
-
+    
     // Encode the binary number
     encode(message, length);
     printf("Encoded number: %s\n", message);
-    
+
     // Decode the binary number
     decode(message, length);
     printf("Decoded number: %s\n", message);
+    
     return 0;
 }

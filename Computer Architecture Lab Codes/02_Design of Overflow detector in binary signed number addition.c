@@ -1,5 +1,5 @@
 /*
-    c program to Design of Overflow detector in binary signed number addition
+    C program to Design of Overflow detector in binary signed number addition.
 */
 
 #include <stdio.h>

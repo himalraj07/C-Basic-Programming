@@ -1,9 +1,8 @@
 /*
-    C program to design of N-Bit 2's complement adder/subtractor
+    C program to design of N-Bit 2's complement adder/subtractor.
 */
 
 #include <stdio.h>
-
 // Function to perform 2's complement addition
 void twosComplementAdder(int a[], int b[], int n, int sum[]);
 
@@ -17,11 +16,13 @@ int main()
 {
     int n;
     int i;
+
     printf("Enter the number of bits: ");
     scanf("%d", &n);
-    int a[n], b[n], sum[n], diff[n];
 
+    int a[n], b[n], sum[n], diff[n];
     printf("Enter the first binary number: ");
+
     for (i = 0; i < n; i++)
     {
         scanf("%1d", &a[i]);
@@ -36,7 +37,7 @@ int main()
     printf("\nPerforming 2's complement addition:\n");
     twosComplementAdder(a, b, n, sum);
     displayBinaryNumber(sum, n);
-    
+
     printf("\nPerforming 2's complement subtraction:\n");
     twosComplementSubtractor(a, b, n, diff);
     displayBinaryNumber(diff, n);

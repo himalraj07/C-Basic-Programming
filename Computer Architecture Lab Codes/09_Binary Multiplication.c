@@ -1,5 +1,5 @@
 /*
-    C program for binary multiplication
+    C program for binary multiplication.
 */
 
 #include <stdio.h>
@@ -51,8 +51,12 @@ int main()
 {
     const char *binary1 = "1101";
     const char *binary2 = "101";
+
     char *multiplicationResult = binaryMultiplication(binary1, binary2);
+
     printf("Multiplication Result: %s\n", multiplicationResult);
+    
     free(multiplicationResult);
+
     return 0;
 }

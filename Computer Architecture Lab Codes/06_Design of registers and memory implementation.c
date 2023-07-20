@@ -1,5 +1,5 @@
 /*
-    c program to Design of registers and memory implementation
+    C program to Design of registers and memory implementation.
 */
 
 #include <stdio.h>
@@ -7,6 +7,7 @@
 
 #define MEMORY_SIZE 20         // Size of the memory
 #define REGISTER_COUNT 8       // Number of registers
+
 int registers[REGISTER_COUNT]; // Array to store register values
 int memory[MEMORY_SIZE];       // Array to represent memory
 
@@ -104,11 +105,15 @@ int main()
 {
     initializeRegisters();
     initializeMemory();
+
     setRegisterValue(0, 42);
     setMemoryValue(10, 100);
+
     printf("Register 0 value: %d\n", getRegisterValue(0));
     printf("Memory location 10 value: %d\n", getMemoryValue(10));
+
     printRegisters();
     printMemory();
+    
     return 0;
 }

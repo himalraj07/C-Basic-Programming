@@ -1,5 +1,5 @@
 /*
-    c program to Design of multiplexer.
+    C program to Design of multiplexer.
 */
 
 #include <stdio.h>
@@ -32,20 +32,28 @@ int multiplexer(int input0, int input1, int input2, int input3, int control)
 int main()
 {
     int input0, input1, input2, input3, control;
+
     printf("Enter input0: ");
     scanf("%d", &input0);
+
     printf("Enter input1: ");
     scanf("%d", &input1);
+
     printf("Enter input2: ");
     scanf("%d", &input2);
+
     printf("Enter input3: ");
     scanf("%d", &input3);
+    
     printf("Enter control signal (0-3): ");
     scanf("%d", &control);
+
     int output = multiplexer(input0, input1, input2, input3, control);
+
     if (output != -1)
     {
         printf("Output: %d\n", output);
     }
+    
     return 0;
 }
