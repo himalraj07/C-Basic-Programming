@@ -8,23 +8,23 @@
 
 int main()
 {
-    float a[SIZE][SIZE+1], x[SIZE], ratio;
+    float a[SIZE][SIZE + 1], x[SIZE], ratio;
     int i, j, k, n;
-    
-    printf("Enter number of unknowns (max 10) : ");
+
+    printf("\nEnter the number of unknowns (maximum 10) : ");
     scanf("%d", &n);
-    
+
     // Input the augmented matrix
-    printf("Enter the augmented matrix (coefficients and constants):\n");
+    printf("\nEnter the augmented matrix (coefficients and constants) :\n");
     for (i = 1; i <= n; i++)
     {
-        for (j = 1; j <= n+1; j++)
+        for (j = 1; j <= n + 1; j++)
         {
-            printf("a[%d][%d] = ", i, j);
+            printf("a[%d][%d]: ", i, j);
             scanf("%f", &a[i][j]);
         }
     }
-    
+
     // Gaussian Elimination
     for (i = 1; i <= n - 1; i++)
     {
@@ -39,10 +39,10 @@ int main()
     }
 
     // Back substitution
-    x[n] = a[n][n+1] / a[n][n];
+    x[n] = a[n][n + 1] / a[n][n];
     for (i = n - 1; i >= 1; i--)
     {
-        x[i] = a[i][n+1];
+        x[i] = a[i][n + 1];
         for (j = i + 1; j <= n; j++)
         {
             x[i] -= a[i][j] * x[j];
@@ -51,11 +51,12 @@ int main()
     }
 
     // Print the solution
-    printf("\nSolution:\n");
+    printf("\nSolution :\n\n");
     for (i = 1; i <= n; i++)
     {
         printf("x[%d] = %0.3f\n", i, x[i]);
     }
+    printf("\n");
 
     return 0;
 }

@@ -12,8 +12,9 @@ float f(float x)
 
 float g(float x)
 {
+    // Updated the calculation to use floating-point division
     float r = 9 * x * x + 10;
-    float s = (float)1 / 3;
+    float s = 1.0 / 3.0;
     return pow(r, s);
 }
 
@@ -22,20 +23,23 @@ int main()
     int i = 0;
     float x0, x1;
 
-    printf("\nEnter initial approximation:");
+    printf("\nFixed Point Iteration Method\n");
+    printf("Equation : x^3 - 9x^2 - 10 = 0\n\n");
+
+    printf("Enter initial approximation : ");
     scanf("%f", &x0);
 
-    printf("\nIteration\tx0\t\tx1"); 
+    printf("\nIteration\t   x0\t\t\t   x1"); 
 
     do
     {
         i++;
         x1 = g(x0);
-        printf("\n%d\t\t%f\t\t%f", i, x0, x1);
+        printf("\n  %d\t\t%f\t\t%f", i, x0, x1);
         x0 = x1;
     } while (fabs(f(x1)) > 0.001);
 
-    printf("\nRoot of equation is: %f", x1);
+    printf("\n\nRoot of the equation is : %f\n\n", x1);
     
     return 0; 
 }

@@ -20,7 +20,7 @@ int main()
 {
     int element, choice;
 
-    printf("Stack Operations :\n");
+    printf("\nStack Operations :\n");
     while (1)
     {
         printf("1. Insert into stack (Push operation)\n");

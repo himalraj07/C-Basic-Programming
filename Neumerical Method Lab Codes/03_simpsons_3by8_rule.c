@@ -14,10 +14,15 @@ float f(float x)
 int main()
 {
     float a, b, h, s = 0, s1;
-    int i, n;
+    int n;
 
-    printf("Enter number of intervals : ");
-    scanf("%d", &n);
+    printf("\nSimpson's 3/8 Rule\n\n");
+    
+    // Input validation for number of intervals (n)
+    do {
+        printf("Enter number of intervals (must be a positive multiple of 3) : ");
+        scanf("%d", &n);
+    } while (n <= 0 || n % 3 != 0);
 
     printf("Enter lower limit : ");
     scanf("%f", &a);
@@ -28,21 +33,23 @@ int main()
     h = (b - a) / n;
     s = f(a) + f(b);
 
-    printf("\n%3f\t%3f", a, f(a));
+    printf("\n%8s\t%8s\n", "x", "f(x)");
+    printf("------------------------\n");
+    printf("%8f\t%8f\n", a, f(a));
+
+    int i;
     for (i = 1; i < n; i++)
     {
-        if (i % 3 == 0)
-            s = s + 2 * f(a + i * h);
-        else
-            s = s + 3 * f(a + i * h);
-        printf("\n%3f\t%3f", a + i * h, f(a + i * h));
+        float x = a + i * h;
+        s += (i % 3 == 0) ? 2 * f(x) : 3 * f(x);
+        printf("%8f\t%8f\n", x, f(x));
     }
 
-    printf("\n%3f\t%3f", b, f(b));
+    printf("%8f\t%8f\n", b, f(b));
 
     s1 = ((3 * h) / 8) * s;
     
-    printf("\n%f", s1);
+    printf("\nResult: %f\n\n", s1);
 
     return 0;
 }

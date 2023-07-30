@@ -4,15 +4,31 @@
 
 #include <stdio.h>
 
-void main()
+int main(void)
 {
-    float m[3][4] = {2, 8, 2, 14, 1, 6, -1, 13, 2, -1, 2, 5}, t;
+    float m[3][4];
     int i, j, k;
 
+    // Input matrix from the user
+    printf("\nEnter the matrix (3x4) : \n");
+    for (i = 0; i < 3; i++)
+    {
+        for (j = 0; j < 4; j++)
+        {
+            scanf("%f", &m[i][j]);
+        }
+    }
+
+    // Perform Gauss-Jordan elimination
     for (i = 0; i < 3; i++)
     {
         // Make the diagonal element 1
-        t = m[i][i];
+        float t = m[i][i];
+        if (t == 0)
+        {
+            printf("\nThe matrix is singular. No unique solution exists.\n\n");
+            return 1;
+        }
         for (j = 0; j < 4; j++)
         {
             m[i][j] /= t;
@@ -32,7 +48,8 @@ void main()
         }
     }
 
-    printf("Matrix is :\n");
+    // Print the result
+    printf("\nMatrix is :\n\n");
     for (i = 0; i < 3; i++)
     {
         for (j = 0; j < 4; j++)
@@ -42,9 +59,12 @@ void main()
         printf("\n");
     }
 
-    printf("Solutions are :\n");
+    printf("\nSolutions are :\n\n");
     for (i = 0; i < 3; i++)
     {
-        printf("%f\n", m[i][3]);
+        printf("x%d = %f\n", i + 1, m[i][3]);
     }
+    printf("\n");
+
+    return 0;
 }

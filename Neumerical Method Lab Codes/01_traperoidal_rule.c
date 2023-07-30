@@ -14,13 +14,13 @@ void main()
 {
     float a, b, h, s = 0, s1;
     int i, n;
-    printf("Enter number of intervals: ");
+    printf("\nEnter number of intervals : ");
     scanf("%d", &n);
 
-    printf("Enter lower limit: ");
+    printf("Enter lower limit : ");
     scanf("%f", &a);
 
-    printf("Enter upper limit: ");
+    printf("Enter upper limit : ");
     scanf("%f", &b);
 
     h = (b - a) / n;
@@ -39,4 +39,5 @@ void main()
     s1 = (h / 2) * s;
     
     printf("\n%f", s1);
+    printf("\n\n");
 }

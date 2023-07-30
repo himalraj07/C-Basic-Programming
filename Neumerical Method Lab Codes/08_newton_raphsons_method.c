@@ -5,38 +5,68 @@
 #include <stdio.h>
 #include <math.h>
 
-float f(float a);
-float y(float a);
+// Function prototypes
+float f(float x);
+float derivative_f(float x);
 
 int main()
 {
-    float a;
+    float x;
     int i = 0;
+    const float tolerance = 0.0001;
 
-    printf("Enter a number : ");
-    scanf("%f", &a);
+    printf("\nNewton-Raphson Method\n");
+    printf("\nEnter an initial guess for the root : ");
+    scanf("%f", &x);
+    printf("\n");
 
-    printf("%d\t%4f\t%4f\t%4f\n", i, a, f(a), y(a));
+    printf("Iteration\tRoot Estimate\t\tFunction Value\t\tDerivative Value\n");
+    printf("--------------------------------------------------------------------------------\n");
     
     do
     {
-        a = a - f(a) / y(a);
-        printf("%d\t%4f\t%4f\t%4f\n", i + 1, a, f(a), y(a));
-        i++;
-    } while (fabs(f(a)) >= 0.0001);
+        float f_x = f(x);
+        float f_prime_x = derivative_f(x);
 
-    printf("Number of iterations are %d\n", i);
-    printf("Root is %f\n", a);
+        // Check for division by zero (derivative should not be zero)
+        if (fabs(f_prime_x) < 1e-6)
+        {
+            printf("Derivative is too close to zero. Newton-Raphson method cannot continue.\n\n");
+            return 1; // Exit with an error code
+        }
+
+        float x_new = x - f_x / f_prime_x;
+        printf("%d\t\t%.6f\t\t%.6f\t\t%.6f\n", i, x_new, f_x, f_prime_x);
+
+        // Check if the difference between the new estimate and the old one is within the tolerance
+        if (fabs(x_new - x) < tolerance)
+        {
+            printf("\n");
+            printf("Converged after %d iterations.\n", i);
+            printf("\n");
+            printf("Approximate root : %.6f\n", x_new);
+            printf("\n");
+            return 0; // Exit successfully
+        }
+
+        x = x_new;
+        i++;
+    } while (i <= 100); // Add a maximum iteration limit to prevent infinite loops
+
+    printf("Method did not converge within %d iterations.\n\n", i);
+    printf("Best approximate root found : %.6f\n\n", x);
 
     return 0;
 }
 
-float f(float a)
+// Function definition
+float f(float x)
 {
-    return (a * a * a - 3 * a - 10);
+    return (x * x * x - 3 * x - 10);
 }
 
-float y(float a)
+// Derivative of the function definition
+float derivative_f(float x)
 {
-    return (3 * a * a - 3);
+    return (3 * x * x - 3);
 }
