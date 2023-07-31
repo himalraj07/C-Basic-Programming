@@ -11,6 +11,9 @@ int main()
     float a[SIZE][SIZE + 1], x[SIZE], ratio;
     int i, j, k, n;
 
+    printf("\nGauss Elimination Method\n");
+    printf("========================\n");
+
     printf("\nEnter the number of unknowns (maximum 10) : ");
     scanf("%d", &n);
 

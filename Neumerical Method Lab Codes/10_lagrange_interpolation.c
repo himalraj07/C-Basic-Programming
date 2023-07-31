@@ -1,5 +1,5 @@
 /*
-    Lagrange interpolation.
+    Lagrange interpolation Method.
 */
 
 #include <stdio.h>
@@ -9,6 +9,9 @@ int main()
 {
     float x[N], y[N], X, res = 0, num, den;
     int i, j, n;
+
+    printf("\nLarange Interpolation Method\n");
+    printf("============================\n");
 
     printf("\nEnter the number of terms (up to %d) : ", N);
     if (scanf("%d", &n) != 1 || n <= 0 || n > N)

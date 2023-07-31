@@ -3,7 +3,7 @@
 */
 
 #include <stdio.h>
-#include <math.h> 
+#include <math.h>
 
 float f(float x)
 {
@@ -18,18 +18,18 @@ float g(float x)
     return pow(r, s);
 }
 
-int main() 
+int main()
 {
     int i = 0;
     float x0, x1;
 
     printf("\nFixed Point Iteration Method\n");
-    printf("Equation : x^3 - 9x^2 - 10 = 0\n\n");
+    printf("============================\n\n");
 
     printf("Enter initial approximation : ");
     scanf("%f", &x0);
 
-    printf("\nIteration\t   x0\t\t\t   x1"); 
+    printf("\nIteration\t   x0\t\t\t   x1");
 
     do
     {
@@ -40,6 +40,6 @@ int main()
     } while (fabs(f(x1)) > 0.001);
 
     printf("\n\nRoot of the equation is : %f\n\n", x1);
-    
-    return 0; 
+
+    return 0;
 }

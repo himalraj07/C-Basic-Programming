@@ -9,6 +9,9 @@ int main(void)
     float m[3][4];
     int i, j, k;
 
+    printf("\nGauss Jordan Method\n");
+    printf("===================\n");
+
     // Input matrix from the user
     printf("\nEnter the matrix (3x4) : \n");
     for (i = 0; i < 3; i++)

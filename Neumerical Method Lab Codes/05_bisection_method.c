@@ -16,9 +16,11 @@ int main()
     int i = 0;
     float x1, x2, x3;
 
-    printf("\nBisection Method to find the root of the function: f(x) = x^3 - 9x^2 - 10\n");
+    printf("\nBisection Method\n");
+    printf("================\n\n");
+
     printf("Enter two initial approximations (x1 and x2) : ");
-    
+
     // Ensure valid input
     if (scanf("%f%f", &x1, &x2) != 2)
     {
@@ -39,11 +41,15 @@ int main()
         {
             i++;
             x3 = (x1 + x2) / 2;
-            printf("%7d\t%10.5f\t%10.5f\t%10.5f\t%10.5f\t%10.5f\t%10.5f\n", i, x1, f(x1), x2, f(x2), x3, f(x3));
+            printf("%0d\t\t%0f\t%0f\t%0f\t%0f\t%0f\t%0f\n", i, x1, f(x1), x2, f(x2), x3, f(x3));
             if (f(x3) * f(x1) > 0)
+            {
                 x1 = x3;
+            }
             else
+            {
                 x2 = x3;
+            }
         } while (fabs(f(x3)) > 0.001);
 
         printf("\nApproximate root : %f\n\n", x3);

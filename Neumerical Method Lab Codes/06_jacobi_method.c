@@ -14,6 +14,9 @@ int main()
     float x, y, z, xn, yn, zn;
     int n, i;
 
+    printf("\nJacobi Method\n");
+    printf("=============\n");
+
     printf("\nEnter initial values of x, y, and z : ");
     scanf("%f %f %f", &x, &y, &z);
 
@@ -39,10 +42,10 @@ int main()
         z = zn;
         
         // Print intermediate results (optional)
-        printf("Iteration %d: x = %f, y = %f, z = %f\n", i, x, y, z);
+        printf("Iteration %d : x = %f, y = %f, z = %f\n", i, x, y, z);
     }
 
-    printf("\nFinal result: x = %f, y = %f, z = %f\n\n", x, y, z);
+    printf("\nFinal result : x = %f, y = %f, z = %f\n\n", x, y, z);
     return 0;
 }
 

@@ -16,6 +16,8 @@ int main()
     int n, i;
 
     printf("\nSimpson's 1/3 Rule for Numerical Integration\n");
+    printf("============================================\n\n");
+
     printf("Enter the number of intervals (even) : ");
     scanf("%d", &n);
 
@@ -39,10 +41,13 @@ int main()
     for (i = 1; i < n; i++)
     {
         if (i % 2 == 0)
+        {
             s = s + 2 * f(a + i * h);
+        }
         else
+        {
             s = s + 4 * f(a + i * h);
-
+        }
         printf("\n%3f\t%3f", a + i * h, f(a + i * h));
     }
 

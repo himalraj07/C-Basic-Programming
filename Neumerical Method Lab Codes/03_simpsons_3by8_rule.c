@@ -16,10 +16,12 @@ int main()
     float a, b, h, s = 0, s1;
     int n;
 
-    printf("\nSimpson's 3/8 Rule\n\n");
-    
+    printf("\nSimpson's 3/8 Rule\n");
+    printf("==================\n\n");
+
     // Input validation for number of intervals (n)
-    do {
+    do
+    {
         printf("Enter number of intervals (must be a positive multiple of 3) : ");
         scanf("%d", &n);
     } while (n <= 0 || n % 3 != 0);
@@ -33,7 +35,7 @@ int main()
     h = (b - a) / n;
     s = f(a) + f(b);
 
-    printf("\n%8s\t%8s\n", "x", "f(x)");
+    printf("\n%5s %10s\n", "x", "\t  f(x)");
     printf("------------------------\n");
     printf("%8f\t%8f\n", a, f(a));
 
@@ -48,7 +50,7 @@ int main()
     printf("%8f\t%8f\n", b, f(b));
 
     s1 = ((3 * h) / 8) * s;
-    
+
     printf("\nResult: %f\n\n", s1);
 
     return 0;

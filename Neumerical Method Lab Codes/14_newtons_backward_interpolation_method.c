@@ -20,6 +20,7 @@ int main()
     int n, i, j;
 
     printf("\nNewton's Backward Interpolation Method\n");
+    printf("======================================\n");
 
     // Input the number of terms
     printf("\nEnter the number of terms (maximum %d) : ", MAX_TERMS);

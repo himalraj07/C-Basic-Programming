@@ -16,6 +16,8 @@ int main()
     const float tolerance = 0.0001;
 
     printf("\nNewton-Raphson Method\n");
+    printf("=====================\n");
+
     printf("\nEnter an initial guess for the root : ");
     scanf("%f", &x);
     printf("\n");

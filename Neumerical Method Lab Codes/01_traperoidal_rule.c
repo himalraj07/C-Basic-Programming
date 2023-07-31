@@ -14,6 +14,10 @@ void main()
 {
     float a, b, h, s = 0, s1;
     int i, n;
+
+    printf("\nTraperoidal rule\n");
+    printf("================\n");
+
     printf("\nEnter number of intervals : ");
     scanf("%d", &n);
 
@@ -37,7 +41,8 @@ void main()
     printf("\n%3f\t%3f", b, f(b));
 
     s1 = (h / 2) * s;
-    
+
     printf("\n%f", s1);
+    
     printf("\n\n");
 }

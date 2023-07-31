@@ -3,80 +3,87 @@
 */
 
 #include <stdio.h>
-#include <math.h>
-
-int fact(int n)
-{
-    if (n == 0 || n == 1)
-        return 1;
-    else
-        return n * fact(n - 1);
-}
 
 int main()
 {
     float x[10], y[10][10], X, temp, sum = 0;
-    int i, n, j, k = 0, f;
-    
-    printf("\nHow many data points will you enter : ");
-    scanf("%d", &n);
+    int i, numDataPoints, j, k = 0;
+
+    printf("\nNewton's Divided Difference Method\n");
+    printf("==================================\n");
+
+    printf("\nHow many data points will you enter (maximum 10) : ");
+    scanf("%d", &numDataPoints);
     printf("\n");
 
+    if (numDataPoints > 10 || numDataPoints < 2)
+    {
+        printf("Please enter a valid number of data points (between 2 and 10).\n");
+        return 1;
+    }
+
     // Input phase
-    for (i = 0; i < n; i++)
+    for (i = 0; i < numDataPoints; i++)
     {
         printf("Enter the value of x%d : ", i);
         scanf("%f", &x[i]);
+
         printf("Enter the value of y%d : ", i);
-        scanf("%f", &y[i][0]); // Assuming y(i) is entered directly, no need to input y(i) multiple times.
+        scanf("%f", &y[i][0]);
+
+        printf("\n");
     }
 
     // Calculation phase
-    for (i = 1; i < n; i++)
+    for (i = 1; i < numDataPoints; i++)
     {
         k = i;
-        for (j = 0; j < n - i; j++)
+        for (j = 0; j < numDataPoints - i; j++)
         {
-            y[i][j+1] = (y[i - 1][j + 1] - y[i - 1][j]) / (x[k] - x[j]);
+            y[i][j + 1] = (y[i - 1][j + 1] - y[i - 1][j]) / (x[k] - x[j]);
             k++;
         }
     }
 
-    printf("\nTable of divided differences :\n");
-    printf("x(i)\t\t y(i)\t\ty1(i) y2(i)\ty3(i) y4(i)\n");
-    for (i = 0; i < n; i++)
+    // Print the divided differences table
+    printf("\nTable of Divided Differences :\n");
+    printf("------------------------------\n");
+    printf("   x(i)  |    y(i)   ");
+    for (i = 1; i < numDataPoints; i++)
     {
-        printf("%f", x[i]);
-        for (j = 0; j < n - i; j++)
+        printf("|    y%d(i)  ", i);
+    }
+    printf("\n");
+    printf("--------------------");
+    for (i = 1; i < numDataPoints; i++)
+    {
+        printf("-------------");
+    }
+    printf("\n");
+
+    for (i = 0; i < numDataPoints; i++)
+    {
+        printf("%7.2f  |", x[i]);
+        for (j = 0; j < numDataPoints - i; j++)
         {
-            printf("\t%f", y[i][j]);
+            printf("  %7.2f  |", y[i][j]);
         }
         printf("\n");
     }
 
-    // Find the value of X
+    // Find the value of X for interpolation
     printf("\nEnter the value of X for interpolation : ");
     scanf("%f", &X);
 
     // Interpolation phase
-    for (i = 0; i < n - 1; i++)
+    for (i = 0; i < numDataPoints; i++)
     {
-        k = f = 0; // initialize k and f to 0 in each iteration
-        temp = 1;
-        while (k != 1)
-        {
-            if (x[i] < X && X < x[i + 1])
-                k = 1;
-            else
-                i++;
-        }
-        f = i;
+        temp = y[i][0];
         for (j = 0; j < i; j++)
         {
-            temp = temp * (X - x[k]);
-            k++;
+            temp *= (X - x[j]);
         }
-        sum = sum + temp * (y[i][f]);
+        sum += temp;
     }
 
     printf("\nf(%f) = %f\n\n", X, sum);
